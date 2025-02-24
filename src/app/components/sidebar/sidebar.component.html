@@ -1,0 +1,19 @@
+<div class="sidebar-container surface-ground" style="height: 98vh">
+  <div *ngFor="let item of menuItems">
+    <div
+      class="flex align-items-center cursor-pointer p-4 w-full m-2"
+      [routerLink]="'/' + item.path"
+      #rla="routerLinkActive"
+      routerLinkActive
+      [ngClass]="rla.isActive ? 'text-primary surface-card' : ''"
+    >
+      <div class="mx-4" style="font-size: 2rem" [ngClass]="item.icon"></div>
+      <div class="text-xl">{{ item.name }}</div>
+      <div *ngIf="item.name === 'Summary'">
+        <!-- <div *ngIf="totalItems !== 0"> -->
+          <div class="bg-orange-300 text-white border-round mx-2 p-2"> {{ totalItems$ | async }}</div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>

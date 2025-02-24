@@ -1,0 +1,17 @@
+<div class="storage-container mx-4">
+  <div class="hard-drive">
+    <div class="text-2xl my-4">Hard Drive</div>
+    <app-grid-items
+      [gridItems]="hardDrive$"
+      (onItemSelectEvent)="onStorageAdd($event)"
+    ></app-grid-items>
+  </div>
+
+  <div class="hard-drive">
+    <div class="text-2xl my-4">SSD</div>
+    <app-grid-items
+      [gridItems]="ssd$"
+      (onItemSelectEvent)="onStorageAdd($event)"
+    ></app-grid-items>
+  </div>
+</div>

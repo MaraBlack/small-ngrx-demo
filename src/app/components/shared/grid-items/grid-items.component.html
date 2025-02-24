@@ -1,0 +1,26 @@
+<div class="flex flex-wrap align-items-center">
+  <div *ngFor="let item of gridItems | async" class="p-2 mx-2">
+    <div class="card flex justify-content-center">
+      <p-card styleClass="surface-ground" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+          <div class="p-2 bg-white w-full">
+            <div class="flex justify-content-center">
+              <img [src]="item.image" alt="{{ item.name }}" />
+            </div>
+          </div>
+        </ng-template>
+        <div class="content surface-ground">
+          <p class="h-4rem mb-4 text-overflow-ellipsis">{{ item.name }}</p>
+        </div>
+        <ng-template pTemplate="footer">
+          <div
+            class="flex align-items-center bg-primary border-round text-xl p-4 m-2 cursor-pointer"
+            (click)="onItemSelect(item)"
+          >
+            <div class="">Add</div>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>
